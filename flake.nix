@@ -28,6 +28,10 @@
           gtk3
           webkitgtk_4_1
           libsoup
+          libayatana-appindicator
+          libappindicator
+          libappindicator-gtk2
+          kdePackages.kstatusnotifieritem
         ];
       in
       {
