@@ -40,7 +40,7 @@
           useNextest = true;
           pname = "snx-rs";
           version = "2.0.2";
-          
+
           # Some tests are failing on NixOS, even though they build fine
           # outside nix build environment. So... it's easier to lie.
           doCheck = false;
@@ -67,7 +67,26 @@
           };
         };
 
+        apps = {
+          snx-rs = {
+            type = "app";
+            program = "${self.defaultPackage}/bin/snx-rs";
+          };
+          snxctl = {
+            type = "app";
+            program = "${self.defaultPackage}/bin/snxctl";
+          };
+        };
+
         defaultPackage = self.packages.${system}.snx-rs;
+
+        nixosModules.default =
+          { config }:
+          {
+            config = {
+              environment.systemPackages = [ self.defaultPackage ];
+            };
+          };
       }
     );
 }
