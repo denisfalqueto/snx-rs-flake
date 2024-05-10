@@ -80,11 +80,11 @@
 
         defaultPackage = self.packages.${system}.snx-rs;
 
-        nixosModules.default =
+        nixosModules =
           { config }:
           {
             config = {
-              environment.systemPackages = [ self.defaultPackage ];
+              environment.systemPackages = [ self.defaultPackage.${system} ];
             };
           };
       }
