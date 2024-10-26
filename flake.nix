@@ -2,15 +2,15 @@
   description = "Open source Linux client for Checkpoint VPN tunnels";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
+    { self
+    , nixpkgs
+    , flake-utils
+    ,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
