@@ -49,7 +49,7 @@
             owner = "ancwrd1";
             repo = "snx-rs";
             rev = "v${version}";
-            hash = "sha256-7AkzpwxRohLaN4zZNNEu8QQOp4H9Qw/uKCKs6TkcR90=";
+            hash = "sha256-TrA0uwzBhITCQ0ql8z1og1iNbH4eJlmzXFPbOpnN5do=";
           };
 
           cargoLock = {
