@@ -30,6 +30,7 @@
           libsoup
           libayatana-appindicator
           libappindicator
+          libappindicator-gtk3
           kdePackages.kstatusnotifieritem
         ];
       in
