@@ -25,12 +25,11 @@
         buildInputs = with pkgs; [
           openssl
           glib
-          gtk3
+          gtk4
           webkitgtk_4_1
           libsoup
           libayatana-appindicator
           libappindicator
-          libappindicator-gtk2
           kdePackages.kstatusnotifieritem
         ];
       in
@@ -39,7 +38,7 @@
           inherit nativeBuildInputs buildInputs;
           useNextest = true;
           pname = "snx-rs";
-          version = "3.1.2";
+          version = "4.1.0";
 
           # Some tests are failing on NixOS, even though they build fine
           # outside nix build environment. So... it's easier to lie.
@@ -49,12 +48,12 @@
             owner = "ancwrd1";
             repo = "snx-rs";
             rev = "v${version}";
-            hash = "sha256-bLuIXd2pqqiyEP+lDTJYVDZkRZ0HcDkKFZd/qlpuf98=";
+            hash = "sha256-EpJP86qv3oeMFp0BSgIN0bYVCPClfeK8MEFRclOeN8I=";
           };
 
           cargoLock = {
             outputHashes = {
-              "isakmp-0.1.0" = "sha256-izXsWjP9n29cJIRCeIlOxcB/Zxlqwrb7DBhuTEuL7xE=";
+              "isakmp-0.1.0" = "sha256-NqbpYEmlRo5krA701N5LI04Z3gdaTtAAMMRC2QHbCxI=";
             };
 
             lockFile = src + /Cargo.lock;
