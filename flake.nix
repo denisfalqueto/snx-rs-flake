@@ -6,15 +6,13 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    ,
-    }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+  }:
     flake-utils.lib.eachDefaultSystem (
-      system:
-      let
+      system: let
         pkgs = nixpkgs.legacyPackages.${system};
 
         nativeBuildInputs = with pkgs; [
@@ -33,8 +31,8 @@
           libappindicator-gtk3
           kdePackages.kstatusnotifieritem
         ];
-      in
-      {
+      in {
+        formatter = pkgs.alejandra;
         packages.snx-rs = pkgs.rustPlatform.buildRustPackage rec {
           inherit nativeBuildInputs buildInputs;
           useNextest = true;
@@ -82,7 +80,7 @@
 
         nixosModules = {
           config = {
-            environment.systemPackages = [ self.defaultPackage.${system} ];
+            environment.systemPackages = [self.defaultPackage.${system}];
           };
         };
       }
