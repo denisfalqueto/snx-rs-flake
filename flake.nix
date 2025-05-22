@@ -37,7 +37,7 @@
           inherit nativeBuildInputs buildInputs;
           useNextest = true;
           pname = "snx-rs";
-          version = "4.3.1";
+          version = "4.4.0";
 
           # Some tests are failing on NixOS, even though they build fine
           # outside nix build environment. So... it's easier to lie.
@@ -47,12 +47,12 @@
             owner = "ancwrd1";
             repo = "snx-rs";
             rev = "v${version}";
-            hash = "sha256-ewpl4yvHuAj2y5TgsURyOMl+LJZQADWrg0GLJQNPFts=";
+            hash = "sha256-FWIMcnRNokNBtLpO1fIlcaEC8d284JaXghl3hx17sfQ=";
           };
 
           cargoLock = {
             outputHashes = {
-              "isakmp-0.1.0" = "sha256-3jrcK8+9+B3wkAypssnwFaWdZzgoxFppqwptyMXy1ew=";
+              "isakmp-0.1.0" = "sha256-aja3CUZBa5py+NF/P1/MM0X89AtWdedrwO0eSlDaX64=";
             };
 
             lockFile = src + /Cargo.lock;
