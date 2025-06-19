@@ -6,13 +6,15 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-  }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
     flake-utils.lib.eachDefaultSystem (
-      system: let
+      system:
+      let
         pkgs = nixpkgs.legacyPackages.${system};
 
         nativeBuildInputs = with pkgs; [
@@ -31,13 +33,14 @@
           libappindicator-gtk3
           kdePackages.kstatusnotifieritem
         ];
-      in {
+      in
+      {
         formatter = pkgs.alejandra;
         packages.snx-rs = pkgs.rustPlatform.buildRustPackage rec {
           inherit nativeBuildInputs buildInputs;
           useNextest = true;
           pname = "snx-rs";
-          version = "4.4.2";
+          version = "4.4.4";
 
           # Some tests are failing on NixOS, even though they build fine
           # outside nix build environment. So... it's easier to lie.
@@ -47,7 +50,7 @@
             owner = "ancwrd1";
             repo = "snx-rs";
             rev = "v${version}";
-            hash = "sha256-BYBtTXMM4GokP6btp/SIwFVxQwJiTVbzHWOij396muA=";
+            hash = "sha256-FVrj26pQthy6gY6UWXD4ACvy0/PPLXM0zrGOIjXl07U=";
           };
 
           cargoLock = {
@@ -80,7 +83,7 @@
 
         nixosModules = {
           config = {
-            environment.systemPackages = [self.defaultPackage.${system}];
+            environment.systemPackages = [ self.defaultPackage.${system} ];
           };
         };
       }
