@@ -40,7 +40,7 @@
           inherit nativeBuildInputs buildInputs;
           useNextest = true;
           pname = "snx-rs";
-          version = "4.8.0";
+          version = "4.8.1";
 
           # Some tests are failing on NixOS, even though they build fine
           # outside nix build environment. So... it's easier to lie.
@@ -50,10 +50,10 @@
             owner = "ancwrd1";
             repo = "snx-rs";
             rev = "v${version}";
-            hash = "sha256-D2WVmu+vECabVdnJtc7ihlj83Z/2m6kD8KZ9ot9dCRE=";
+            hash = "sha256-/ntw1AuOqTy9s1jY+6UIDqZWtmjr1DVRQur/h0LkkXI=";
           };
 
-          cargoHash = "sha256-+rTpuAe+6YdgCQr/+zJMaSYo4T+3Fkma0PSVjnsxAfg=";
+          cargoHash = "sha256-lLYQ+N5P8p4jiJCo6UyXvXeDT9JRlzIk8VH6UKlqvX0=";
 
           meta = {
             description = "Open source Linux client for Checkpoint VPN tunnels";
