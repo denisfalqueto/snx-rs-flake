@@ -1,3 +1,7 @@
+# Archived repository
+
+This repository is archived, because I don't use Nix anymore. So I can't continue supporting it. Feel free to fork it.
+
 # Flake for snx-rs
 
 This flake builds [snx-rs](https://github.com/ancwrd1/snx-rs), a client for that crappy vpn client used in my day job.
